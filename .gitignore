@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Musikschule/ClientApp/.angular/cache/16.1.3/angular-webpack
+/Musikschule/ClientApp/.angular/cache/16.1.3/babel-webpack

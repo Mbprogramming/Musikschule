@@ -1,0 +1,21 @@
+<div class="contaimer-fluid">
+    <button class="btn btn-primary">Neue Musikschule anlegen</button>
+</div>
+<div class="container-fluid">
+    <table class="table full-width">
+        <tr>
+            <th width="33%">Name</th>
+            <th width="33%">Adresse</th>
+            <th width="33%"></th>
+        </tr>
+        <tr *ngFor="let musikschule of musikschulen">
+            <td>{{musikschule.name}}</td>
+            <td>{{musikschule.adresse}}</td>
+            <td>
+                <button class="btn btn-primary">Bearbeiten</button>
+                &nbsp;
+                <button class="btn btn-danger">Löschen</button>
+            </td>
+        </tr>
+    </table>
+</div>
