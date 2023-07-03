@@ -14,12 +14,24 @@ export class MusikschuleService {
     return this._client.get<Musikschule[]>('http://localhost:5185/api/Musikschule');
   } 
 
+  getMusikschule(id: string): Observable<Musikschule> {
+    return this._client.get<Musikschule>('http://localhost:5185/api/Musikschule/' + id);
+  }
+
   addMusikschule(name: string, adresse: string) {
     let item = new Musikschule();
     item.name = name;
     item.adresse = adresse;
     item.id = "00000000-0000-0000-0000-000000000000";
     return this._client.post('http://localhost:5185/api/Musikschule', item);
+  }
+
+  editMusikschule(id: string, name: string, adresse: string) {
+    let item = new Musikschule();
+    item.name = name;
+    item.adresse = adresse;
+    item.id = id;
+    return this._client.put('http://localhost:5185/api/Musikschule/' + id, item);
   }
 
   deleteMusikschule(id: string) {

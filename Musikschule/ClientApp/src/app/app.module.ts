@@ -6,9 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MusikschuleUeberblickComponent } from './musikschule-ueberblick/musikschule-ueberblick.component';
 import { AddEditMusikschuleComponent } from './add-edit-musikschule/add-edit-musikschule.component';
 
@@ -16,9 +13,6 @@ import { AddEditMusikschuleComponent } from './add-edit-musikschule/add-edit-mus
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     MusikschuleUeberblickComponent,
     AddEditMusikschuleComponent
   ],
@@ -30,8 +24,7 @@ import { AddEditMusikschuleComponent } from './add-edit-musikschule/add-edit-mus
     RouterModule.forRoot([
       { path: '', component: MusikschuleUeberblickComponent, pathMatch: 'full' },
       { path: 'add-musikschule', component: AddEditMusikschuleComponent },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'edit-musikschule/:id', component: AddEditMusikschuleComponent },
     ])
   ],
   providers: [],

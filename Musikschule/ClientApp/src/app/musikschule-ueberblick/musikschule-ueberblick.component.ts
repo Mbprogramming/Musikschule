@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MusikschuleService } from '../services/musikschule.service';
 import { Musikschule } from '../models/musikschule';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-musikschule-ueberblick',
@@ -16,7 +17,8 @@ export class MusikschuleUeberblickComponent {
     });
   }
 
-  constructor(private readonly _service: MusikschuleService) {
+  constructor(private readonly _service: MusikschuleService,
+    private _router: Router) {
     this.refresh();
   }
 
@@ -26,4 +28,9 @@ export class MusikschuleUeberblickComponent {
       this.refresh();
     });
   } 
+
+  edit(id: string | undefined | null) {
+    if(id === null || id === undefined) return;
+    this._router.navigate(['/edit-musikschule', id]);
+  }
 }
