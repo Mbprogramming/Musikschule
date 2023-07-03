@@ -1,5 +1,5 @@
 <div class="contaimer-fluid">
-    <button class="btn btn-primary">Neue Musikschule anlegen</button>
+    <a [routerLink]="['add-musikschule']" class="btn btn-primary">Neue Musikschule anlegen</a>
 </div>
 <div class="container-fluid">
     <table class="table full-width">
@@ -14,7 +14,7 @@
             <td>
                 <button class="btn btn-primary">Bearbeiten</button>
                 &nbsp;
-                <button class="btn btn-danger">Löschen</button>
+                <button class="btn btn-danger" (click)="delete(musikschule.id)">Löschen</button>
             </td>
         </tr>
     </table>

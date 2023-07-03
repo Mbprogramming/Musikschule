@@ -10,9 +10,20 @@ import { Musikschule } from '../models/musikschule';
 export class MusikschuleUeberblickComponent {
   musikschulen: Musikschule[] = [];
   
-  constructor(private readonly _service: MusikschuleService) {
+  refresh() {
     this._service.getMusiklschulen().subscribe(musikschulen => {
       this.musikschulen = musikschulen;
     });
   }
+
+  constructor(private readonly _service: MusikschuleService) {
+    this.refresh();
+  }
+
+  delete(id: string | undefined | null) {
+    if(id === null || id === undefined) return;
+    this._service.deleteMusikschule(id).subscribe(() => {
+      this.refresh();
+    });
+  } 
 }
