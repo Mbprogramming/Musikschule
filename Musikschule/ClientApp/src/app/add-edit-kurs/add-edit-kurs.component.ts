@@ -71,7 +71,7 @@ export class AddEditKursComponent {
           name, inhalt, start, dauer,
           teilnehmerGesamt, teilnehmerBelegt).subscribe(
           () => {
-            this._router.navigate(['/']);
+            this._router.navigate(['/', 'kurse', this.musikschuleId]);
           }
         );
       }

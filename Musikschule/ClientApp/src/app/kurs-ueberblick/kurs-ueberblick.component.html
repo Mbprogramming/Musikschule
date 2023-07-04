@@ -1,5 +1,6 @@
+<h1>Kurse von {{musikschule?.name}}</h1>
 <div class="contaimer-fluid">
-    <a [routerLink]="['add-musikschule']" class="btn btn-primary">Neuen Kurs anlegen</a>
+    <a [routerLink]="['/', 'add-kurs', musikschuleId]" class="btn btn-primary">Neuen Kurs anlegen</a>
 </div>
 <div class="container-fluid">
     <table class="table full-width">
