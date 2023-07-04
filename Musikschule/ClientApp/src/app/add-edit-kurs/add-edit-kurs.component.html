@@ -1,0 +1,30 @@
+<h1>Kurs von {{musikschule?.name}}</h1>
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" [formControl]="nameControl" />
+    </div>
+    <div class="mb-3">
+        <label for="inhalt" class="form-label">Inhalt</label>
+        <textarea class="form-control" id="inhalt" [formControl]="inhaltControl"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="start" class="form-label">Start</label>
+        <input type="datetime-local" class="form-control" id="start" [formControl]="startControl" />
+    </div>
+    <div class="mb-3">
+        <label for="dauer" class="form-label">Dauer</label>
+        <input type="number" class="form-control" id="dauer" [formControl]="dauerControl" />
+    </div>
+    <div class="mb-3">
+        <label for="teilnehmerGesamt" class="form-label">Teilnehmer Gesamt</label>
+        <input type="number" class="form-control" id="teilnehmerGesamt" [formControl]="teilnehmerGesamtControl" />
+    </div>
+    <div class="mb-3">
+        <label for="teilnehmerBelegt" class="form-label">Teilnehmer Belegt</label>
+        <input type="number" class="form-control" id="teilnehmerBelegt" [formControl]="teilnehmerBelegtControl" />
+    </div>
+    <button type="button" (click)="save()" class="btn btn-primary">Speichern</button>
+    &nbsp;
+    <button type="button" (click)="cancel()" class="btn btn-secondary">Abbrechen</button>
+</form>

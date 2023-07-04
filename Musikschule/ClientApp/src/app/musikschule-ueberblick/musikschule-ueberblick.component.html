@@ -15,6 +15,8 @@
                 <button class="btn btn-primary" (click)="edit(musikschule.id)">Bearbeiten</button>
                 &nbsp;
                 <button class="btn btn-danger" (click)="delete(musikschule.id)">Löschen</button>
+                &nbsp;
+                <a [routerLink]="['add-kurs', musikschule.id]" class="btn btn-normal">Kurs hinzufügen</a>
             </td>
         </tr>
     </table>

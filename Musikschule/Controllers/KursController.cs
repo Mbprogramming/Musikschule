@@ -24,11 +24,22 @@ namespace Musikschule.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Kurs>>> GetKurse()
         {
-          if (_context.Kurse == null)
-          {
-              return NotFound();
-          }
+            if (_context.Kurse == null)
+            {
+                return NotFound();
+            }
             return await _context.Kurse.ToListAsync();
+        }
+
+        // GET: api/Kurs/Schule/x
+        [HttpGet("Schule/{id}")]
+        public async Task<ActionResult<IEnumerable<Kurs>>> GetKurseForSchule(Guid id)
+        {
+            if (_context.Kurse == null)
+            {
+                return NotFound();
+            }
+            return await _context.Kurse.Where(w => w.MusikSchuleId == id).ToListAsync();
         }
 
         // GET: api/Kurs/5
