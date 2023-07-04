@@ -13,7 +13,7 @@ export class MusikschuleService {
 
   constructor(private readonly _client: HttpClient) { 
     if(environment.production) {
-      this._baseUrl = '/api/Musikschule';
+      this._baseUrl = 'http://musikschule.softwareentwicklung-ehrke-bach.de/api/Musikschule';
     }
   }
 

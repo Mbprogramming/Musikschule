@@ -1,1 +1,10 @@
-<p>musikschule-query works!</p>
+<table>
+    <tr>
+        <th width="50%">Name der Musikschule</th>
+        <th width="50%">Adresse</th>
+    </tr>
+    <tr *ngFor="let musikschule of musikschulen">
+        <td width="50%">{{musikschule.name}}</td>
+        <td width="50%">{{musikschule.adresse}}</td>
+    </tr>
+</table>
