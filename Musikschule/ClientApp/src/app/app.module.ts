@@ -30,6 +30,7 @@ import { AddEditKursComponent } from './add-edit-kurs/add-edit-kurs.component';
       { path: 'add-musikschule', component: AddEditMusikschuleComponent },
       { path: 'edit-musikschule/:id', component: AddEditMusikschuleComponent },
       { path: 'add-kurs/:musikschuleId', component: AddEditKursComponent },
+      { path: 'kurse/:musikschuleId', component: KursUeberblickComponent },
     ])
   ],
   providers: [],

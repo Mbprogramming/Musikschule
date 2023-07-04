@@ -18,7 +18,7 @@ export class AddEditKursComponent {
   nameControl = new FormControl('');
   inhaltControl = new FormControl('');
   startControl = new FormControl(Date.now());
-  dauerControl = new FormControl(90);
+  dauerControl = new FormControl('00:00');
   teilnehmerGesamtControl = new FormControl(10);
   teilnehmerBelegtControl = new FormControl(0);
 
@@ -55,7 +55,7 @@ export class AddEditKursComponent {
     let name = this.nameControl.value;
     let inhalt = this.inhaltControl.value;
     let start = this.startControl.value !== null ? new Date(this.startControl.value) : new Date(Date.now()); 
-    let dauer = "00:90:00";// + this.dauerControl.value;
+    let dauer = this.dauerControl.value + ":00";
     let teilnehmerGesamt = this.teilnehmerGesamtControl.value;
     let teilnehmerBelegt = this.teilnehmerBelegtControl.value;
 

@@ -20,13 +20,18 @@ export class KursService {
     return this._client.get<Kurse[]>(this._baseUrl);
   } 
 
+  getKurseFürSchule(musikSchuleId: string): Observable<Kurse[]> {
+    return this._client.get<Kurse[]>(this._baseUrl + "/Schule/" + musikSchuleId);
+  } 
+
   addKurs(musikschuleId: string, name: string, inhalt: string, start: Date, dauer: string, teilnehmer: number, belegt: number) {
+    alert(dauer);
     let item = new Kurse();
     item.musikSchuleId = musikschuleId;
     item.name = name;
     item.inhalt = inhalt; 
     item.start = new Date(start); 
-    item.dauer = "01:15:00";
+    item.dauer = dauer;
     item.teilnehmerGesamt = teilnehmer;
     item.teilnehmerBelegt = belegt;
     item.id = "00000000-0000-0000-0000-000000000000";

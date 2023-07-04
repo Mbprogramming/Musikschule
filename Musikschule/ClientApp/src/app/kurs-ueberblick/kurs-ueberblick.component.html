@@ -1,1 +1,29 @@
-<p>kurs-ueberblick works!</p>
+<div class="contaimer-fluid">
+    <a [routerLink]="['add-musikschule']" class="btn btn-primary">Neuen Kurs anlegen</a>
+</div>
+<div class="container-fluid">
+    <table class="table full-width">
+        <tr>
+            <th>Name</th>
+            <th>Inhalt</th>
+            <th>Beginn</th>
+            <th>Dauer</th>
+            <th>Plätze</th>
+            <th>Gebucht</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let kurs of kurse">
+            <td>{{kurs.name}}</td>
+            <td>{{kurs.inhalt}}</td>
+            <td>{{kurs.start}}</td>
+            <td>{{kurs.dauer}}</td>
+            <td>{{kurs.teilnehmerGesamt}}</td>
+            <td>{{kurs.teilnehmerBelegt}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="edit(kurs.id)">Bearbeiten</button>
+                &nbsp;
+                <button class="btn btn-danger" (click)="delete(kurs.id)">Löschen</button>
+            </td>
+        </tr>
+    </table>
+</div>
