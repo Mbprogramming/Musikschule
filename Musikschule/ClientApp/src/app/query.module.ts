@@ -4,10 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { createCustomElement } from '@angular/elements';
 import { MusikschuleQueryComponent } from './musikschule-query/musikschule-query.component';
+import { KurseQueryComponent } from './kurse-query/kurse-query.component';
 
 @NgModule({
   declarations: [
-    MusikschuleQueryComponent
+    MusikschuleQueryComponent,
+    KurseQueryComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,5 +28,9 @@ export class QueryModule implements DoBootstrap {
       injector: this.injector,
     });
     customElements.define('musikschule-query', el);
+    const el2 = createCustomElement(KurseQueryComponent, {
+      injector: this.injector,
+    });
+    customElements.define('kurse-query', el2);
   }
 }

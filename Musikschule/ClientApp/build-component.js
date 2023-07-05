@@ -14,4 +14,5 @@ build = async () => {
         fs.remove(file);
     });
 }
+
 build();

@@ -1,0 +1,19 @@
+<h1>Alle Kurse</h1>
+<table class="table full-width">
+    <tr>
+        <th>Name</th>
+        <th>Inhalt</th>
+        <th>Beginn</th>
+        <th>Dauer</th>
+        <th>Plätze</th>
+        <th>Gebucht</th>
+    </tr>
+    <tr *ngFor="let kurs of kurse">
+        <td>{{kurs.name}}</td>
+        <td>{{kurs.inhalt}}</td>
+        <td>{{kurs.start}}</td>
+        <td>{{kurs.dauer}}</td>
+        <td>{{kurs.teilnehmerGesamt}}</td>
+        <td>{{kurs.teilnehmerBelegt}}</td>
+    </tr>
+</table>
